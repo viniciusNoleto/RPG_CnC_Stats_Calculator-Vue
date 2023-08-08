@@ -1,0 +1,40 @@
+
+body {
+    background-size: cover;
+    background-image: url("../images/papel-de-papiro-mármore.jpg");
+}
+
+header {
+    text-align: center;
+    color: var(--cnc-red);
+}
+
+input, select {
+    text-align: center;
+    border-color: var(--cnc-red-transparent) !important;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.top label{
+    font-size: 18px;
+}
+
+    
+:root {
+    --cnc-red: rgb(192, 0, 0);
+    --cnc-red-transparent: rgba(126, 0, 0, 0.2);
+}

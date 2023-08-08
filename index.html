@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="stylesheet" href="assets/style.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    </head>
+    
+    <body>
+        <header class="p-2 mt-3">
+            <h1>
+                Contos e Cantos de Vilgard
+            </h1>
+            <h6>
+                Calculadora de Ficha
+            </h6>
+        </header>
+
+        <main class="container p-5" id="app">
+
+            <div class="row mb-4 top">
+                <div class="col-3 p-0">
+                    <label for="level">Nível</label>
+                    <select class="form-select" id="level" v-model="level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-4 p-0">
+                    <label for="classe">Classe</label>
+                    <select class="form-select" id="classe" v-model="classe">
+                        <option value=""></option>
+                        <option value="PureMage">Mago (Mana Pura)</option>
+                        <option value="RegularMage">Mago (Mana Regular)</option>
+                        <option value="Studious">Estudioso</option>
+                        <option value="RegularStudious">Estudioso (Mana Regular)</option>
+                        <option value="Fighter">Guerreiro</option>
+                        <option value="Thief">Ladrão</option>
+                        <option value="RegularThief">Ladrão (Mana Regular)</option>
+                    </select>
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3 p-0">
+                    <label for="conhecimento">Conhecimento</label>
+                    <input class="form-control" type="number" id="conhecimento" placeholder="Para Conjuradores" v-model="conhecimento">
+                </div>
+            </div>
+            
+            <div class="row mb-5 top">
+                
+                <div class="col-1 p-0">
+                    <label for="constituicao">CO</label>
+                    <input class="form-control" type="number" id="constituicao" v-model="constituicao">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="forca">FO</label>
+                    <input class="form-control" type="number" id="forca" v-model="forca">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="destreza">DE</label>
+                    <input class="form-control" type="number" id="destreza" v-model="destreza">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="carisma">CA</label>
+                    <input class="form-control" type="number" id="carisma" v-model="carisma">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="sorte">SO</label>
+                    <input class="form-control" type="number" id="sorte" v-model="sorte">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="inteligencia">IN</label>
+                    <input class="form-control" type="number" id="inteligencia" v-model="inteligencia">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-1 p-0">
+                    <label for="sabedoria">SA</label>
+                    <input class="form-control" type="number" id="sabedoria" v-model="sabedoria">
+                </div>
+
+            </div>
+
+            <div class="row mt-2 mb-2">
+                
+                <div class="col-12">
+                    <label for="Esquiva">Esquiva</label>
+                    <input class="form-control" type="number" id="Esquiva" readonly :value="esquiva">
+                </div>
+
+            </div>
+            
+            <div class="row mb-5">
+
+                <div class="col-3">
+                    <label for="Vida">Vida</label>
+                    <input class="form-control" type="number" id="Vida" readonly :value="vida">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Sanidade">Sanidade</label>
+                    <input class="form-control" type="number" id="Sanidade" readonly :value="30 + (Math.floor((parseInt(this.inteligencia) + parseInt(this.sabedoria)) / 2))*10">
+                </div>
+                
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Sanidade">Mana</label>
+                    <input class="form-control" type="number" id="Sanidade" readonly :value="mana">
+                </div>
+
+            </div>
+            
+            <div class="row mb-2">
+
+                <div class="col-3">
+                    <label for="Energ-Fogo">Energia & Fogo</label>
+                    <input class="form-control" type="number" id="Energ-Fogo" readonly :value="6 + (Math.floor(parseInt(this.destreza) / 2))">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Necro-Radi">Necrótico & Radiante</label>
+                    <input class="form-control" type="number" id="Necro-Radi" readonly :value="6 + (Math.floor(parseInt(this.sabedoria) / 2))">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Gelo-Acido">Gelo & Ácido</label>
+                    <input class="form-control" type="number" id="Gelo-Acido" readonly :value="6 + (Math.floor(parseInt(this.constituicao) / 2))">
+                </div>
+            
+            </div>
+            
+            <div class="row">
+
+                <div class="col-3">
+                    <label for="Trovao">Trovão</label>
+                    <input class="form-control" type="number" id="Trovao" readonly :value="6 + (Math.floor(parseInt(this.forca) / 2))">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Raio">Raio</label>
+                    <input class="form-control" type="number" id="Raio" readonly :value="6 + (Math.floor(parseInt(this.sorte) / 2))">
+                </div>
+
+                <div class="col"></div>
+                
+                <div class="col-3">
+                    <label for="Psiq">Psíquico</label>
+                    <input class="form-control" type="number" id="Psiq" readonly :value="6 + (Math.floor(parseInt(this.inteligencia) / 2))">
+                </div>
+            
+            </div>
+
+        </main>
+
+        <script>
+
+            new Vue({
+                el: '#app',
+                data: {
+                    level: 1,
+                    classe: '',
+                    conhecimento: 0,
+
+                    constituicao: 0,
+                    forca: 0,
+                    destreza: 0,
+                    carisma: 0,
+                    sorte: 0,
+                    inteligencia: 0,
+                    sabedoria: 0,
+
+                    esquiva: 0,
+                    vida: 0,
+                    mana: 0,
+                },
+                watch: {
+                    destreza(recent, old) {
+                        this.calcEsquiva();
+                    },
+                    sabedoria(recent, old) {
+                        this.calcEsquiva();
+                    },
+                    classe(recent, old) {
+                        this.calcEsquiva();
+                        this.calcMana();
+                        this.calcVida();
+                    },
+                    conhecimento(recent, old) {
+                        this.calcMana();
+                    },
+                    constituicao(recent, old) {
+                        this.calcVida();
+                    },
+                    level(recent, old) {
+                        this.calcVida();
+                    }
+                },
+                methods: {
+                    calcEsquiva(){
+
+                        let base = 0;
+
+                        switch (this.classe) {
+                            case 'PureMage':
+                            case 'RegularMage':
+                            case 'Studious':
+                            case 'RegularStudious':
+                                base = 6;
+                                break;
+                            case 'Fighter':
+                                base = 8;
+                                break;
+                            case 'Thief':
+                            case 'RegularThief':
+                                base = 10;
+                                break;
+                            default:
+                                this.esquiva = 0;
+                                return;
+                        }
+
+                        this.esquiva = base + Math.floor((parseInt(this.destreza) + parseInt(this.sabedoria)) / 2);
+
+                    },
+                    calcMana(){
+
+                        let base = 0;
+                        let mult = 0; 
+
+                        switch (this.classe) {
+                            case 'PureMage':
+                                base = 30;
+                                mult = 5;
+                                break;
+                            case 'RegularMage':
+                            case 'RegularStudious':
+                            case 'RegularThief':
+                                base = 18;
+                                mult = 3;
+                                break;
+                            default:
+                                this.mana = 0;
+                                return;
+                        }
+
+                        this.mana = base + (parseInt(this.conhecimento) * mult);
+
+                    },
+                    calcVida(){
+                        
+                        let mult = 0;
+
+                        switch (this.classe) {
+                            case 'PureMage':
+                            case 'RegularMage':
+                                mult = 10;
+                                break;
+                            case 'Studious':
+                            case 'RegularStudious':
+                            case 'Thief':
+                            case 'RegularThief':
+                                mult = 15;
+                                break;
+                            case 'Fighter':
+                                mult = 20;
+                                break;
+                            default:
+                                this.vida = 0;
+                                return;
+                        }
+
+                        this.vida = 100 + (parseInt(this.constituicao) * 20) + ((parseInt(this.level) - 1) * mult);
+
+
+                    }
+                }
+            });
+
+
+        </script>
+        
+
+    </body>
+
+</html>
