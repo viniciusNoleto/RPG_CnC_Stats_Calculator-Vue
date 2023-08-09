@@ -24,7 +24,7 @@
 
         <main class="container p-5" id="app">
 
-            <div class="row mb-4 top">
+            <div class="row mb-1 top">
                 <div class="col-6 col-md-3 mb-3">
                     <label for="level">Nível</label>
                     <select class="form-select" id="level" v-model="level">
@@ -60,146 +60,138 @@
                     <input class="form-control" type="number" id="conhecimento" placeholder="Para Conjuradores" v-model="conhecimento">
                 </div>
             </div>
-            
-            <div class="row mb-5 top d-md-none">
+   
+            <div class="row mb-3 top d-md-none">
                 
-                <div class="col-4 mb-3">
+                <div class="col-4 col-md mb-3">
                     <label for="constituicao">CO</label>
                     <input class="form-control" type="number" id="constituicao" v-model="constituicao">
                 </div>
                 
-                <div class="col-4 mb-3">
+                <div class="col-4 col-md mb-3">
                     <label for="forca">FO</label>
                     <input class="form-control" type="number" id="forca" v-model="forca">
                 </div>
                 
-                <div class="col-4 mb-3">
+                <div class="col-4 col-md mb-3">
                     <label for="destreza">DE</label>
                     <input class="form-control" type="number" id="destreza" v-model="destreza">
                 </div>
                 
-                <div class="col-3 mb-3">
+                <div class="col-3 col-md mb-3">
                     <label for="carisma">CA</label>
                     <input class="form-control" type="number" id="carisma" v-model="carisma">
                 </div>
                 
-                <div class="col-3 mb-3">
+                <div class="col-3 col-md mb-3">
                     <label for="sorte">SO</label>
                     <input class="form-control" type="number" id="sorte" v-model="sorte">
                 </div>
                 
-                <div class="col-3 mb-3">
+                <div class="col-3 col-md mb-3">
                     <label for="inteligencia">IN</label>
                     <input class="form-control" type="number" id="inteligencia" v-model="inteligencia">
                 </div>
                 
-                <div class="col-3">
-                    <label for="sabedoria">SA</label>
-                    <input class="form-control" type="number" id="sabedoria" v-model="sabedoria">
-                </div>
-
-            </div>
-            
-            <div class="row mb-5 top d-none d-md-flex">
-                
-                <div class="col mb-3">
-                    <label for="constituicao">CO</label>
-                    <input class="form-control" type="number" id="constituicao" v-model="constituicao">
-                </div>
-                
-                <div class="col mb-3">
-                    <label for="forca">FO</label>
-                    <input class="form-control" type="number" id="forca" v-model="forca">
-                </div>
-                
-                <div class="col mb-3">
-                    <label for="destreza">DE</label>
-                    <input class="form-control" type="number" id="destreza" v-model="destreza">
-                </div>
-                
-                <div class="col mb-3">
-                    <label for="carisma">CA</label>
-                    <input class="form-control" type="number" id="carisma" v-model="carisma">
-                </div>
-                
-                <div class="col mb-3">
-                    <label for="sorte">SO</label>
-                    <input class="form-control" type="number" id="sorte" v-model="sorte">
-                </div>
-                
-                <div class="col mb-3">
-                    <label for="inteligencia">IN</label>
-                    <input class="form-control" type="number" id="inteligencia" v-model="inteligencia">
-                </div>
-                
-                <div class="col">
+                <div class="col-3 col-md">
                     <label for="sabedoria">SA</label>
                     <input class="form-control" type="number" id="sabedoria" v-model="sabedoria">
                 </div>
 
             </div>
 
-            <div class="row mt-2 mb-3 auto">
+            <div class="row mb-3 top d-none d-md-flex">
                 
-                <div class="col-12">
+                <div class="col-md mb-3">
+                    <label for="constituicao">CO</label>
+                    <input class="form-control" type="number" id="constituicao" v-model="constituicao">
+                </div>
+                
+                <div class="col-md mb-3">
+                    <label for="forca">FO</label>
+                    <input class="form-control" type="number" id="forca" v-model="forca">
+                </div>
+                
+                <div class="col-md mb-3">
+                    <label for="destreza">DE</label>
+                    <input class="form-control" type="number" id="destreza" v-model="destreza">
+                </div>
+                
+                <div class="col-md mb-3">
+                    <label for="carisma">CA</label>
+                    <input class="form-control" type="number" id="carisma" v-model="carisma">
+                </div>
+                
+                <div class="col-md mb-3">
+                    <label for="sorte">SO</label>
+                    <input class="form-control" type="number" id="sorte" v-model="sorte">
+                </div>
+                
+                <div class="col-md mb-3">
+                    <label for="inteligencia">IN</label>
+                    <input class="form-control" type="number" id="inteligencia" v-model="inteligencia">
+                </div>
+                
+                <div class="col-md">
+                    <label for="sabedoria">SA</label>
+                    <input class="form-control" type="number" id="sabedoria" v-model="sabedoria">
+                </div>
+
+            </div>
+            
+            <div class="row mb-4 auto">
+
+                <div class="col-12 col-md-3">
                     <label for="Esquiva">Esquiva</label>
                     <input class="form-control" type="number" id="Esquiva" readonly :value="esquiva">
                 </div>
 
-            </div>
-            
-            <div class="row mb-5 auto">
-
-                <div class="col-4">
+                <div class="col-4 col-md-3">
                     <label for="Vida">Vida</label>
                     <input class="form-control" type="number" id="Vida" readonly :value="vida">
                 </div>
                 
-                <div class="col-4">
+                <div class="col-4 col-md-3">
                     <label for="Sanidade">Sanidade</label>
                     <input class="form-control" type="number" id="Sanidade" readonly :value="30 + (Math.floor((parseInt(this.inteligencia) + parseInt(this.sabedoria)) / 2))*10">
                 </div>
                 
-                <div class="col-4">
+                <div class="col-4 col-md-3">
                     <label for="Sanidade">Mana</label>
                     <input class="form-control" type="number" id="Sanidade" readonly :value="mana">
                 </div>
 
             </div>
             
-            <div class="row mb-3 auto">
+            <div class="row auto">
 
-                <div class="col-4">
+                <div class="col-4 col-md-2 mb-3">
                     <label for="Energ-Fogo">Energia & Fogo</label>
                     <input class="form-control" type="number" id="Energ-Fogo" readonly :value="6 + (Math.floor(parseInt(this.destreza) / 2))">
                 </div>
                 
-                <div class="col-4">
-                    <label class="d-none d-sm-inline-block" for="Necro-Radi">Necrótico & Radiante</label>
-                    <label class="d-inline-block d-sm-none" for="Necro-Radi">Necro & Radiante</label>
+                <div class="col-4 col-md-2 mb-3">
+                    <label class="d-none d-lg-inline-block" for="Necro-Radi">Necrótico & Radiante</label>
+                    <label class="d-inline-block d-lg-none" for="Necro-Radi">Necro. & Radi.</label>
                     <input class="form-control" type="number" id="Necro-Radi" readonly :value="6 + (Math.floor(parseInt(this.sabedoria) / 2))">
                 </div>
                 
-                <div class="col-4">
+                <div class="col-4 col-md-2 mb-3">
                     <label for="Gelo-Acido">Gelo & Ácido</label>
                     <input class="form-control" type="number" id="Gelo-Acido" readonly :value="6 + (Math.floor(parseInt(this.constituicao) / 2))">
                 </div>
-            
-            </div>
-            
-            <div class="row auto">
 
-                <div class="col-4">
+                <div class="col-4 col-md-2">
                     <label for="Trovao">Trovão</label>
                     <input class="form-control" type="number" id="Trovao" readonly :value="6 + (Math.floor(parseInt(this.forca) / 2))">
                 </div>
                 
-                <div class="col-4">
+                <div class="col-4 col-md-2">
                     <label for="Raio">Raio</label>
                     <input class="form-control" type="number" id="Raio" readonly :value="6 + (Math.floor(parseInt(this.sorte) / 2))">
                 </div>
                 
-                <div class="col-4">
+                <div class="col-4 col-md-2">
                     <label for="Psiq">Psíquico</label>
                     <input class="form-control" type="number" id="Psiq" readonly :value="6 + (Math.floor(parseInt(this.inteligencia) / 2))">
                 </div>

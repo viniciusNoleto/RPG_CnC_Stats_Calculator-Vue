@@ -16,7 +16,7 @@ main div.top label {
 }
 
 main div.auto label {
-    font-size: clamp(.65rem, .8vw, .9rem);
+    font-size: clamp(.7rem, .8vw, .9rem);
 }
 
 input, select {
